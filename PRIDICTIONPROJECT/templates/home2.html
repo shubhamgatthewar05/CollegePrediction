@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #3454D1;
+            color: #fff;
+            padding: 20px 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav-links li {
+            margin-right: 20px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        /* Hero Section Styles */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        img.slide-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #FF7F50;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        /* Add more styling as needed */
+
+        /* About Section Styles */
+        .about {
+            background-color: #fff;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        /* College Predictor Section Styles */
+        .predict {
+            background-color: #e0e0e0;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        /* Contact Section Styles */
+        .contact {
+            background-color: #3454D1;
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        /* Social Icons Styles */
+        .social-icons a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                background-color: #3454D1;
+                text-align: center;
+                width: 100%;
+            }
+        
+            .nav-links.active li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>College Predictor</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Predict</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero slideshow-container">
+        <div class="mySlides">
+            <img class="slide-img" src="{{url_for('static',filename='image1.jpeg')}}" alt="Slide 1">
+        </div>
+
+        <div class="mySlides">
+            <img class="slide-img" src="{{url_for('static',filename='image2.jpg')}}" alt="Slide 2">
+        </div>
+        <div class="mySlides">
+            <img class="slide-img" src="{{url_for('static',filename='imag3.png')}}" alt="Slide 2">
+        </div>
+        <div class="mySlides">
+            <img class="slide-img" src="{{url_for('static',filename='image4.webp')}}" alt="Slide 2">
+        </div>
+
+        <!-- Add more slides as needed -->
+
+        <div class="hero-content">
+            <h1>Discover Your Dream College</h1>
+            <p>Get personalized college predictions based on your preferences and qualifications.</p>
+            <a href="predict.html" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+   
+
+    
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 College Predictor</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Slideshow JavaScript
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            const slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change slide every 2 seconds
+        }
+    </script>
+</body>
+</html>

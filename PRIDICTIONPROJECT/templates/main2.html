@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">       
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        outline: none;
+        box-sizing: border-box;
+        transition:  .2s;
+        text-transform: capitalize;
+        transition: all .2s linear;
+        text-decoration: none;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        box-sizing: border-box;
+    }
+    html{
+        font-size: 62.5%;
+        overflow: hidden;
+        scroll-behavior: smooth;
+        scroll-padding-top: 6rem;
+    }
+    header{
+        background-color: #6d11b4;
+        width: 100%;
+        padding: 1.5rem 5%;
+        z-index: 2000;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+}
+/* Style for the logo */
+/* Style for the logo */
+/* Style for the logo */
+.logo {
+    align-items: left;
+    left: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 30px;
+    color: #c0c0c0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    margin-left: 2rem; /* Add margin to push the logo to the left */
+    position: relative;
+}
+
+/* Add subtle text shadow */
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    opacity: 0;
+    transform: scaleX(0);
+    animation: logoAnimation 2s infinite; /* Create a continuous animation */
+}
+
+/* Keyframes for the logo animation */
+@keyframes logoAnimation {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+}
+
+/* Hover effect for the logo */
+.logo:hover {
+    color: #f7f7f7;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    transform: translateX(10px);
+}
+
+
+
+
+nav a{
+   color: #dcdcdc; 
+    font-size: 1.7rem;
+    margin: 0 1.5rem;
+    text-decoration: none;
+    position: relative;
+}
+nav a:hover{
+    color: #a75f0d;
+    text-decoration: underline;
+}
+.menu_icons  div{
+    color: white;
+    font-size: 2rem;
+    margin-left: 1.5rem;
+}
+
+#menu-bar{
+    display: none;
+}
+.home{
+    padding: 2rem 7%;
+    background: #ffffff;
+}
+.main-home{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top:10% ;
+    
+}
+.main-inner-home{
+    flex: 1 1 45rem;
+
+}
+/* image  here css  */
+.main-inner-home .right-content-img {
+    width: 80%; /* Increase the size of the image to 80% of the container width */
+    height: 100%;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.4); /* Apply a shadow effect */
+}
+.main-inner-home h2{
+    font-size: 40px;
+    font-weight: 500;
+padding: 0.5rem 0;
+}
+.main-inner-home h1{
+font-size: 40px;
+padding-bottom: 2rem;
+font-weight: 700;
+
+
+}
+.main-inner-home p{
+font-size: 1.5rem;
+line-height: 3rem;
+
+
+}
+.main-inner-home .right-content-img img{
+    
+    width: 100%;
+    padding: 5rem;
+}
+.home-back{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+
+.button {
+    display: inline-block;
+    background-color: #6d11b4;
+    color: #fff;
+    padding: 6px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #290544;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
+}
+.doctor-info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        overflow: none;
+        padding: 20px;
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+        display: none;
+        z-index: 1000;
+    }
+
+    .doctor-img-container:hover .doctor-info {
+        display: block;
+    }
+
+    .doctor-info h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .doctor-info p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+
+    
+
+
+    /* Button styling */
+/* Style for the button */
+button {
+    background-color: #6d11b4;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Add a continuous glow effect */
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(left to right, #f9f9f9 0%, #f9f9f9 40%, transparent 40%, transparent 60%, #f9f9f9 60%, #f9f9f9 100%);
+
+    opacity: 0;
+    transform: scale(0.8);
+    animation: glow 2s infinite;
+    transition: opacity 0.3s;
+}
+
+
+/* this is username  */
+
+.welcome-message {
+            font-size: 18px;
+            margin: 0;
+            display: inline-block;
+        }
+
+        .welcome-message.logged-in {
+            font-weight: 300;
+            color: rgb(0, 0, 0);
+        }
+
+        .welcome-message.not-logged-in {
+            color: red;
+        }
+
+
+
+
+@keyframes glow {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Add a sliding effect to the icon */
+button .icon {
+    margin-right: 10px;
+    font-size: 24px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+/* Hover effect for the button */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for the icon (you can change the icon class) */
+button:hover .icon {
+    color: #ffcc00;
+    transform: translateX(10px);
+}
+
+  
+.navbar a.login-button {
+    background-color: #6d11b4;
+    color: #fff;
+    padding: 7px 4px;
+    font-size: 24px;
+    border: blueviolet;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.navbar a.login-button:hover {
+    background-color: #290544;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Style for the user icon */
+.user_info {
+            cursor: pointer;
+            font-size: 20px;
+            color: #000000;
+        }
+
+        .user_info:hover {
+            color: #007BFF;
+        }
+        .sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    width: 320px;
+max-height:0px;
+overflow: hidden;
+
+transition: max-height 0.5s;
+}
+.sub-menu-wrap.open-menu{
+max-height: 400px;
+}
+
+.sub-menu{
+    background: white;
+    padding: 20px;
+    margin: 10px;
+}
+.uer-info{
+    display: flex;
+    align-items: center;
+
+}
+.uer-info h3{
+    font-weight: 500;
+
+}
+.uer-info img{
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.sub-menu hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+     margin: 12px 0;
+}
+.sub-menu-link p{
+    width: 100%;
+}
+.sub-menu-link i{
+    width: 40px;
+    background: #e5e5e5;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 15px;
+}
+
+.sub-menu-link span{
+    font-size: 22px;
+    transition: transform 0.5s;
+
+}
+.sub-menu-link:hover span{
+    transform: translate(5px);
+}
+.sub-menu-link:hover p{
+    font-weight: 600;
+}
+        /* Add some additional styles for the form container */
+        .edit-form-container {
+            display: none;
+            background: white;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        /* Style for form elements (you can customize further) */
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            color: #000000;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        /* Style for the Google Translate widget container */
+#google_translate_element {
+    display: inline-block; /* or any other display property that fits your layout */
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+/* Style for the Google Translate widget select dropdown */
+#google_translate_element select {
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    padding: 8px; /* Adjust padding as needed */
+    font-size: 10px; /* Adjust font size as needed */
+    background-color: #f9f9f9; /* Customize the background color */
+}
+
+/* Style for the Google Translate widget button */
+#google_translate_element img {
+    width: 10px; /* Adjust the width of the icon */
+    height: 20px; /* Adjust the height of the icon */
+    vertical-align: middle; /* Center the icon vertically with the text */
+    margin-left: 10px; /* Adjust the margin as needed */
+}
+
+
+
+
+
+
+
+
+@media (max-width:768px){
+
+    html{
+        font-size: 55%;
+        overflow: visible; 
+
+    }
+    header{
+        padding: 2rem;
+
+    }
+    #menu-bar{
+        display: initial;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        background-color:rgb(101, 24, 210) ;
+        width: 100%;
+        height: 100vh;
+
+    }
+
+    .navbar.active{
+        left: 0;
+    }
+
+    .navbar a{
+        display: flex;
+        align-items: center;
+        padding: 1.5rem;
+        margin: 1rem;
+        border: 2px solid wheat;
+        border-radius: 10px;
+        background:rgb(36, 3, 84) ; 
+    }
+    .main-inner-home{
+        padding-top: 8%;
+    }
+    .main-inner-home .right-content-img img{
+    width: 100%;
+    padding: 3rem;
+}
+
+
+}
+
+
+</style>
+<body>
+   
+   <header>
+    <div class="logo">DocSage</div>
+    <nav class="navbar">
+        <a href="#" >home</a>
+        <a href="#" >about us</a>
+        <a href="#" >help</a>
+        <a href="{{ url_for('contact') }}" >contact</a>
+       
+        <div class="welcome-message {% if username %}logged-in{% else %}not-logged-in{% endif %}">
+            {% if username %}
+                <p>Welcome, {{ username }}!</p>
+            {% else %}
+                <p>Welcome! Please log in.</p>
+            {% endif %}
+        </div>
+       
+    </nav>
+
+    <div class="menu_icons">
+        <div id="menu-bar" class="fa fa-bars"></div>
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            }
+        </script>
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="uer-info">
+                    <img src="d1.avif" alt="">
+                    <h3>College Predictor</h3>
+                </div>
+                <hr>
+
+
+                
+            </div>
+            </div>
+        </div>
+
+       
+    </div>
+
+</header>
+
+<div class="home">
+    <div class="home-back">
+        <img src="imag2.png" alt="">
+    </div>
+    
+    <div class="main-home">
+        <div class="main-inner-home">
+            <h2>Discover Your Dream College</h2>
+            
+           <p>welcome to College Predictor, your personalized gateway to finding the perfect college based on your Common Entrance Test (CET) scores. Our advanced algorithm considers your academic achievements, preferences, and aspirations to provide tailored predictions that match your unique profile</p>
+    
+
+
+        </div>
+        <div class="main-inner-home">
+            <div class="right-content-img doctor-img-container">
+                <div class="mySlides">
+                    <img class="slide-img" src="{{url_for('static',filename='image1.jpeg')}}" alt="Slide 1">
+                </div>
+                <div class="mySlides">
+                    <img class="slide-img" src="{{url_for('static',filename='image2.jpg')}}" alt="Slide 2">
+                </div>
+                <div class="mySlides">
+                    <img class="slide-img" src="{{url_for('static',filename='imag3.png')}}" alt="Slide 3">
+                </div>
+                <div class="mySlides">
+                    <img class="slide-img" src="{{url_for('static',filename='image4.webp')}}" alt="Slide 4">
+                </div>
+                
+              
+            </div>
+        </div>
+       
+    
+      
+
+    </div>
+
+    <div>
+        <a  href="{{ url_for('index') }}">
+            <button>
+                predict college
+                <i class="fa-sharp fa-solid fa-circle-arrow-right"></i>
+            </button>
+        </a>
+    </div>
+</div>
+<script>
+   
+    let editForm = document.getElementById("editForm");
+
+    function toggleMenu() {
+        subMenu.classList.toggle("open-menu");
+    }
+
+    function showEditForm() {
+        editForm.style.display = "block";
+    }
+
+</script>
+
+<script>
+    let subMenu=document.getElementById("subMenu");
+
+    function toggleMenu(){
+        subMenu.classList.toggle("open-menu")
+    }
+</script>
+
+<script>
+    let menubar = document.querySelector('#menu-bar')
+    let mynav = document.querySelector('.navbar')
+
+
+    menubar.onclick=()=>{
+        menubar.classList.toggle('fa-times')
+        mynav.classList.toggle('active')
+    }
+
+
+
+</script>
+<script>
+    let slideIndex = 0;
+
+    function showSlides() {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 2000); // Change slide every 2 seconds
+    }
+
+    // Run the showSlides function when the page loads
+    window.onload = showSlides;
+</script>
+
+</body>
+</html>

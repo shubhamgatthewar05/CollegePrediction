@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/469a51c0bb.js" crossorigin="anonymous"></script>
+    <style>
+
+        .carousel-container {
+            margin-top: 20px; /* Adjust spacing as needed */
+        }
+        .carousel-item img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    color: #0a0909;
+}
+
+
+.carousel-caption h3 {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.navbar {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+
+.navbar h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+.navbar-brand {
+    font-size: 18px;
+}
+User
+.navbar {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+
+.navbar h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+.navbar-brand {
+    font-size: 18px;
+}
+
+/* Style the navigation links */
+.navbar-nav .nav-link {
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+/* Style the active link (Home) */
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+}
+
+/* Add some spacing to the right of the navigation items */
+.navbar-nav li {
+    margin-right: 15px;
+}
+
+/* Remove the default border around the toggle button */
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler {
+    border: none;
+}
+/* Style the government norm section */
+
+h4{
+    color: orange;
+}
+
+.government-norm p {
+    font-size: 18px;
+    margin: 0;
+    font-weight: bold;
+}
+
+
+.moving-notice {
+    background-color: #8a8d92;
+    color: #0b0a0a;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap;
+    animation: moveNotice 10s linear infinite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.tushar{
+    max-width:100px;
+    display:flex
+}
+.government-norm {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 30px 30px 20px 30px;
+  color: #2f2f2f;
+  background-color:gray;
+  border-top: 1px solid #e5e5e5;
+  color: #fff;
+}
+
+.footer > * {
+  flex:  1 100%;
+}
+
+.footer__addr {
+  margin-right: 1.25em;
+  margin-bottom: 2em;
+}
+
+.footer__logo {
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  text-transform: lowercase;
+  font-size: 1.5rem;
+}
+
+.footer__addr h2 {
+  margin-top: 1.3em;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.nav__title {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.footer address {
+  font-style: normal;
+  color: #999;
+}
+
+.footer__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  max-width: max-content;
+  background-color: rgb(33, 33, 33, 0.07);
+  border-radius: 100px;
+  color: #2f2f2f;
+  line-height: 0;
+  margin: 0.6em 0;
+  font-size: 1rem;
+  padding: 0 1.3em;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer li {
+  line-height: 2em;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer__nav {
+  display: flex;
+	flex-flow: row wrap;
+}
+
+.footer__nav > * {
+  flex: 1 50%;
+  margin-right: 1.25em;
+}
+
+.nav__ul a {
+  color: #999;
+}
+
+.nav__ul--extra {
+  column-count: 2;
+  column-gap: 1.25em;
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  color: #999;
+}
+
+.legal__links {
+  display: flex;
+  align-items: center;
+}
+
+.heart {
+  color: #2f2f2f;
+}
+
+@media screen and (min-width: 24.375em) {
+  .legal .legal__links {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 40.375em) {
+  .footer__nav > * {
+    flex: 1;
+  }
+
+  .nav__item--extra {
+    flex-grow: 2;
+  }
+
+  .footer__addr {
+    flex: 1 0px;
+  }
+
+  .footer__nav {
+    flex: 2 0px;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="imo">
+    <p>Government Of India</p>
+    
+    <h4>Scholarship Portal</h4>
+  
+    </div>
+
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Menu -></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('index') }}">National Scholarships</a>
+                </li>
+
+               
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<marquee behavior="scroll" direction="left" class="moving-notice">
+    Notice: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</marquee>
+
+
+<!-- Image Slider -->
+<div class="container-fluid carousel-container">
+    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+       
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{url_for('static',filename='roll.png')}}" class="d-block w-100" alt="Image 1">
+                <!-- Add image paths and alt text as needed -->
+
+               
+            </div>
+            <div class="carousel-item active">
+                <img src="{{url_for('static',filename='scholar.jpg')}}" class="d-block w-100" alt="Image 1">
+                <!-- Add image paths and alt text as needed -->
+
+               
+            </div>
+            <div class="carousel-item">
+                <img src="{{url_for('static',filename='slider3.jpg')}}" class="d-block w-100" alt="Image 1">
+                <!-- Add image paths and alt text as needed -->
+                
+            </div>
+            <div class="carousel-item">
+                <img src="{{url_for('static',filename='social.jpg')}}" class="d-block w-100" alt="Image 1">
+                <!-- Add image paths and alt text as needed -->
+               
+            </div>
+            
+           
+        </div>
+        <a class="carousel-control-prev" href="#imageCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#imageCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </a>
+    </div>
+</div>
+
+
+
+<footer class="footer">
+  <div class="footer__addr">
+    <h1 class="footer__logo">Scholarwise</h1>
+
+    <h2>Contact</h2>
+
+    <address>
+     Nanded,Maharashtra 000000000<br>
+
+      <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+    </address>
+  </div>
+
+  <ul class="footer__nav">
+    <li class="nav__item">
+      <h2 class="nav__title">Media</h2>
+
+      <ul class="nav__ul">
+        <li>
+          <a href="#">Online</a>
+        </li>
+
+        <li>
+          <a href="#">Print</a>
+        </li>
+
+        <li>
+          <a href="#">Alternative Ads</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav__item nav__item--extra">
+      <h2 class="nav__title">Professional Courses</h2>
+
+      <ul class="nav__ul nav__ul--extra">
+        <li>
+          <a href="#">Hardware Design</a>
+        </li>
+
+        <li>
+          <a href="#">Software Design</a>
+        </li>
+
+        <li>
+          <a href="#">Digital Signage</a>
+        </li>
+
+        <li>
+          <a href="#">Automation</a>
+        </li>
+
+        <li>
+          <a href="#">Artificial Intelligence</a>
+        </li>
+
+        <li>
+          <a href="#">IoT</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav__item">
+      <h2 class="nav__title">Laws</h2>
+
+      <ul class="nav__ul">
+        <li>
+          <a href="#">Privacy Policy</a>
+        </li>
+
+        <li>
+          <a href="#">Terms of Use</a>
+        </li>
+
+        <li>
+          <a href="#">Sitemap</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="legal">
+    <p>&copy; 2019 Something. All rights reserved.</p>
+
+    <div class="legal__links">
+      <span>Made with <span class="heart">♥</span> remotely from Goverment Organisation</span>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

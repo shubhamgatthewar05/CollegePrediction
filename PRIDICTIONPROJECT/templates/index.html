@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Recommender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #333333;
+        }
+
+        ol.fancy-border {
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        ol.fancy-border li {
+            margin-bottom: 5px;
+            color: #333333;
+        }
+
+        form#pdf-form {
+            margin-top: 10px;
+        }
+        form#pdf-form button[type="submit"] {
+        display: block;
+        width: auto; /* Set the width to "auto" for a simple button appearance */
+        margin: 10px auto; /* Center the button */
+        padding: 10px 20px; /* Adjust padding for a more compact button */
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    form#pdf-form button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    ol.fancy-border {
+    counter-reset: item;
+    border-left: 4px solid #007bff;
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+ol.fancy-border li {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+    padding-left: 20px;
+}
+
+ol.fancy-border li:before {
+    content: counter(item, decimal);
+    counter-increment: item;
+    font-size: 20px;
+    color: #007bff;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+ol.fancy-border li:hover {
+    background-color: #e6f7ff;
+    border-radius: 10px;
+    transform: scale(1.03);
+}
+        /* Media Queries for Responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                max-width: 100%;
+                padding: 10px;
+            }
+
+            input[type="text"],
+            button[type="submit"] {
+                padding: 8px;
+            }
+            form#pdf-form button[type="submit"] {
+            width: 100%;
+            padding: 8px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>College Recommender</h1>
+        <form method="POST" action="{{ url_for('index') }}">
+            <label for="category">Category (OPEN, SC, ST, OBC):</label>
+            <input type="text" id="category" name="category" required><br><br>
+            <label for="marks">Marks:</label>
+            <input type="text" id="marks" name="marks" required><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    {% if recommended_colleges %}
+    <h2>Recommended Colleges:</h2>
+    <ol type="1" class="fancy-border">
+        {% for college in recommended_colleges %}
+            <li>-{{index}},{{ college }}</li>
+        {% endfor %}
+    </ol>
+
+    <form method="POST" action="/generate_pdf" id="pdf-form">
+        <input type="hidden" id="college_list" name="college_list" value="{{ recommended_colleges|join(', ') }}">
+        <button type="submit">Download as PDF</button>
+    </form>
+    {% endif %}
+</body>
+</html>
